@@ -5,7 +5,9 @@
 package ModuloBancario.Session;
 
 import ModuloBancario.Entidades.Cuenta;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -29,11 +31,26 @@ public class manejadorCuenta implements manejadorCuentaLocal {
     // "Insert Code > Add Business Method")
 
     @Override
+    /**
+     Ejecuta el metodo, crea query nombrado, pasa por el jpa, va a la base de datos y retorna los objetos solicitados para almacenarlos en una lista
+     */
     public List<Cuenta> recuperarCuentas() {
         List<Cuenta> cnt = new ArrayList<Cuenta>();
         Query sql = em.createNamedQuery("Cliente.findAll");
         return cnt;
     }
+
+    @Override
+    public void crearCuenta(Long cuenta_id, String usuario_id, String cuenta_num, Date cuenta_fecha, BigInteger saldo) {
+        Cuenta cnt = new Cuenta();
+        cnt.setCuentaId(cuenta_id);
+        cnt.setUsuarioId(null);
+        cnt.setCuentaNum(cuenta_num);
+        cnt.setCuentaFecha(cuenta_fecha);
+        cnt.setSaldo(saldo);
+        
+    }
+    
     
 
 }

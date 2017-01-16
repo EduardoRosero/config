@@ -5,6 +5,8 @@
 package ModuloBancario.Session;
 
 import ModuloBancario.Entidades.Cuenta;
+import java.math.BigInteger;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -16,5 +18,7 @@ import javax.ejb.Local;
 public interface manejadorCuentaLocal {
 
     List<Cuenta> recuperarCuentas();
+
+    void crearCuenta(Long cuenta_id, String usuario_id, String cuenta_num, Date cuenta_fecha, BigInteger saldo);
     
 }

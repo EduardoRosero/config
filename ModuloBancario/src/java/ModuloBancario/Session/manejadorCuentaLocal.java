@@ -4,6 +4,8 @@
  */
 package ModuloBancario.Session;
 
+import ModuloBancario.Entidades.Cuenta;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -12,5 +14,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface manejadorCuentaLocal {
+
+    List<Cuenta> recuperarCuentas();
     
 }

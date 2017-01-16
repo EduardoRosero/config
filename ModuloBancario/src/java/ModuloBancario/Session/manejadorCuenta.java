@@ -4,9 +4,13 @@
  */
 package ModuloBancario.Session;
 
+import ModuloBancario.Entidades.Cuenta;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -14,7 +18,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class manejadorCuenta implements manejadorCuentaLocal {
-    @PersistenceContext(unitName = "ModuloBancarioPU")//insert code UserEntityManager
+    @PersistenceContext(unitName = "ModuloBancarioPU")//insert code User Entity Manager
     private EntityManager em;//Instancia que administra todas las entidades que tengo declaradas
 
     public void persist(Object object) {
@@ -23,5 +27,13 @@ public class manejadorCuenta implements manejadorCuentaLocal {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+    @Override
+    public List<Cuenta> recuperarCuentas() {
+        List<Cuenta> cnt = new ArrayList<Cuenta>();
+        Query sql = em.createNamedQuery("Cliente.findAll");
+        return cnt;
+    }
+    
 
 }

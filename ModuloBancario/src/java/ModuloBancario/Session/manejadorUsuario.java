@@ -30,13 +30,18 @@ public class manejadorUsuario implements manejadorUsuarioLocal {
     // "Insert Code > Add Business Method")
 
     @Override
+    /**
+     * Método que permite realizar la consulta a la base de datos para recuperar toda la informacion de ls Usuarios y almacenarlos en una lista
+     */
     public List<Usuario> recuperarUsuarios() {
         List<Usuario> usr = new ArrayList<Usuario>();
         Query sql = em.createNamedQuery("Usuario.findAll");
         return usr;
     }
 
+    
     @Override
+    
     public void crearUsuario(Short usuario_id, String usuario_ci, String usuario_nom1, String usuario_nom2, String usuario_ape1, String usuario_ape2, String usuario_telf, String usuario_dir, String usuario_sexo, String usuario_edad, String usuario_email, String usuario_pass, Boolean usuario_tipo) {
         Usuario usr = new Usuario();
         usr.setUsuarioId(usuario_id);

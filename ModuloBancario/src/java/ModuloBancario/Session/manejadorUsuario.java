@@ -31,9 +31,9 @@ public class manejadorUsuario implements manejadorUsuarioLocal {
 
     @Override
     public List<Usuario> recuperarUsuarios() {
-        List<Usuario> cnt = new ArrayList<Usuario>();
+        List<Usuario> usr = new ArrayList<Usuario>();
         Query sql = em.createNamedQuery("Usuario.findAll");
-        return cnt;
+        return usr;
     }
 
     @Override

@@ -36,7 +36,7 @@ public class manejadorCuenta implements manejadorCuentaLocal {
      */
     public List<Cuenta> recuperarCuentas() {
         List<Cuenta> cnt = new ArrayList<Cuenta>();
-        Query sql = em.createNamedQuery("Cliente.findAll");
+        Query sql = em.createNamedQuery("Cuenta.findAll");
         return cnt;
     }
 

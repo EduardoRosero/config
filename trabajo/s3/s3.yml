@@ -1,5 +1,18 @@
+#Configuración del servidor
 server.port: "8030"
+#Conficuración de la base de datos
 spring.datasource.url: "jdbc:mysql://localhost:3306/music?useSSL=false"
 spring.datasource.username: "root"
 spring.datasource.password: "root"
 spring.datasource.driver-class-name: "com.mysql.jdbc.Driver"
+#Configuracion del servidor de mensajeria
+spring.rabbitmq.host: "localhost"
+spring.rabbitmq.port: "5672"
+spring.rabbitmq.username: "guest"
+spring.rabbitmq.password: "guest"
+ 
+spring.cloud.stream.bindings.input.destination: "singerOrder"
+spring.cloud.stream.bindings.input.group: "singerOrderGroup"
+
+spring.cloud.stream.bindings.foodOrdersChannel.destination: "singerOrder"
+spring.cloud.stream.default.contentType: "application/json"

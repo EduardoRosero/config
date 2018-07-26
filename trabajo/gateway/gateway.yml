@@ -1,6 +1,6 @@
 #Configuración del servidor
 #spring.application.name= "gateway"
-server.port= "9090"
-zuul.prefix= "/api"
+server.port: "9090"
+zuul.prefix: "/api"
 zuul.routes.singer.path: "/s1"
 zuul.routes.singer.url: "https://trabajo-singer.cfapps.io/rest/singers"

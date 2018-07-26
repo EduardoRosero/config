@@ -1,5 +1,5 @@
 #Configuración del servidor
-spring.application.name= "gateway"
+#spring.application.name= "gateway"
 server.port= "9090"
 zuul.prefix= "/api"
 zuul.routes.singer.path: "/s1"

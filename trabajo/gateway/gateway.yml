@@ -1,5 +1,6 @@
 #Configuración del servidor
-spring.application.name=gateway
-server.port=9090
-eureka.client.register-with-eureka=false
-zuul.prefix=/api
+spring.application.name= "gateway"
+server.port= "9090"
+zuul.prefix= "/api"
+zuul.routes.licensestatic.path: "s1"
+zuul.routes.licensestatic.url: "http://licenseservice-static:8081"
